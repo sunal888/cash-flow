@@ -8,11 +8,13 @@ var expenseRoutes = require("./routes/expensesRoute");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(__dirname +'/public'));
+app.use(express.static(__dirname + '/views'));
 
 // seedDB(); //seed the database
 
 app.get("/", function(req, res){
-    res.send("this is the root route");
+    res.sendFile("index.html")
 });
 
 app.use('/api/expenses', expenseRoutes);
