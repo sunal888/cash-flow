@@ -5,11 +5,11 @@ var expenseHelp = require("../helpers/expenseHelp");
 
 router.route('/')
  .get(expenseHelp.getExpenses)
-//  .post(expenseHelp.createTodo)
+ .post(expenseHelp.createExpense);
  
-// router.route('/:todoId')
-//   .get(expenseHelp.getTodo)
-//   .put(expenseHelp.updateTodo)
-//   .delete(expenseHelp.deleteTodo)
+router.route('/:expenseId')
+  .get(expenseHelp.getExpense)
+  .put(expenseHelp.updateExpense)
+  .delete(expenseHelp.deleteExpense)
   
 module.exports = router;

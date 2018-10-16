@@ -9,7 +9,7 @@ var expenseRoutes = require("./routes/expensesRoute");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-seedDB(); //seed the database
+// seedDB(); //seed the database
 
 app.get("/", function(req, res){
     res.send("this is the root route");
